@@ -1,5 +1,6 @@
 import { use } from "react";
 import api from "../api/shazamApi";
+import Discover from "../components/Discover";
 
 const getWorldCharts = async () => {
   const response = await api.get("/charts/world");
@@ -8,8 +9,12 @@ const getWorldCharts = async () => {
 
 const Home = () => {
   let songs = use(getWorldCharts());
-  console.log(songs);
-  return <div>App goes here.</div>;
+  
+  return (
+    <>
+      <Discover songs={songs} />
+    </>
+  );
 };
 
 export default Home;
