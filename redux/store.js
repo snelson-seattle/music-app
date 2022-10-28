@@ -1,9 +1,5 @@
-import { configureStore } from '@reduxjs/toolkit';
-
-import playerReducer from './features/playerSlice';
+import {configureStore} from "@reduxjs/toolkit";
 
 export const store = configureStore({
-  reducer: {
-    player: playerReducer,
-  },
+    reducer: {}
 });
