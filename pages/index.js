@@ -1,5 +1,7 @@
 import shazamApi from "../api/shazamApi";
 
+import Discover from "../components/Discover";
+
 export const getServerSideProps = async () => {
   const { data } = await shazamApi.get("/charts/world");
 
@@ -8,9 +10,12 @@ export const getServerSideProps = async () => {
   };
 };
 
-export default function Home({data}) {
+export default function Home({ data }) {
   console.log(data);
-  
 
-  return <div>App goes here.</div>;
+  return (
+    <>
+      <Discover songs={data} />
+    </>
+  );
 }
