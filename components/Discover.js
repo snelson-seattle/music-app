@@ -1,8 +1,11 @@
 import SongList from "./SongList";
 import GenreSelector from "./GenreSelector";
+import { useSelector, useDispatch } from "react-redux";
 
 const Discover = ({ songs }) => {
   const genreTitle = "Pop";
+  const dispatch = useDispatch();
+  const {activeSong, isPlaying} = useSelector((state) => state.player );
 
   return (
     <div className="flex flex-col">
