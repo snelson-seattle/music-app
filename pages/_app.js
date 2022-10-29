@@ -2,11 +2,13 @@ import "../styles/globals.css";
 import { Provider } from "react-redux";
 import { store } from "../redux/store";
 import MusicPlayer from "../components/MusicPlayer";
+import SideBar from "../components/SideBar";
 
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <div className="relative flex h-screen">
+        <SideBar />
         <div className="flex-1 flex flex-col">
           <div className="px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex flex-col-reverse xl:flex-row">
             <div className="flex-1 h-fit pb-40">
